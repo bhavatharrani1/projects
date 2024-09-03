@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: burlywood;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 130vh;
+        margin: 0;
+    }
+    
+    .quiz-container {
+        background-color: white;
+        padding-top: 220px;
+        padding-bottom: 260px;
+        padding-left: 30px;
+        padding-right: 30px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+    }
+    
+    .question {
+        margin-bottom: 21px;
+    }
+    
+    .question p {
+        font-weight: bold;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: lightblue;
+        width: 30%;
+    }
+    
+    button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    label:hover{
+        background-color:rgb(148, 146, 146);
+    }
+</style>
+    
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. What is the capital of France?</p>
+                <label>
+                    <input type="radio" name="q1" value="Paris"> Paris
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="London"> London
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="Rome"> Rome
+                </label>
+            </div>
+            <div class="question">
+                <p>2. What is the first prime number?</p>
+                <label>
+                    <input type="radio" name="q2" value="3"> 3
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="4"> 4
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="2"> 2
+                </label>
+            </div>
+            <div class="question">
+                <p>3. Which animal is the 'Ship of the Desert'?</p>
+                <label>
+                    <input type="radio" name="q3" value="Giraffe"> Giraffe
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="Camel"> Camel
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="Elephant"> Elephant
+                </label>
+            </div>
+            <div class="question">
+            <p>4. What is the coolest layer of atmosphere?</p>
+                <label>
+                    <input type="radio" name="q4" value="Stratosphere"> Stratosphere
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="Mesosphere"> Mesosphere
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="Thermosphere"> Thermosphere
+                </label>
+            </div>
+            <div class="question">
+            <p>5. Which is the first country to launch satellite to the space?</p>
+            <label>
+                <input type="radio" name="q5" value="Soviet Union"> Soviet Union
+            </label>
+            <label>
+                <input type="radio" name="q5" value="Russia"> Russia
+            </label>
+            <label>
+                <input type="radio" name="q5" value="USA"> USA
+            </label>
+        </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        
+    document.getElementById('quiz-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        let score = 0;
+        const answers = {
+            q1: 'Paris',
+            q2: '2',
+            q3: 'Camel',
+            q4: 'Mesosphere',
+            q5: 'Soviet Union'
+        };
+        
+        for (const [question, correctAnswer] of Object.entries(answers)) {
+            const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            if (selectedAnswer && selectedAnswer.value === correctAnswer) {
+                score++;
+            }
+        }
+        
+        alert(`Your score is ${score} out of ${Object.keys(answers).length} `);
+        if (score>=3){
+            alert("CONGRATS! That's a good score.");
+            
+        }
+        else{
+            alert("Better Luck Next Time!")
+        }
+        
+        let playAgain = confirm("Do you want to play again?")
+        if (playAgain===true){
+            location.reload();
+        }
+        else{
+            alert("Thanks for Playing!");
+        }
+    });
+</script>
+
+
+    
+</body>
+</html>

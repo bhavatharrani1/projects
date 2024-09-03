@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+    background-color: #141414;
+    box-sizing: border-box;
+    border: block;
+
+}
+
+/* Header Styles */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.navo{
+    max-height: 100px;
+    max-width: 99px;
+}
+.banner_fade{
+    background-color: linear grad(180,transparent ,black);
+    height: 7.5rem;
+    margin-top: 120px;
+}
+.row{
+    margin: 0;
+}
+
+
+
+.row_posters {
+    height: 170px;
+    
+    display: flex;
+    
+    align-items: center;
+    text-align: center;
+    margin: 0%;
+    padding: 20px;
+    color: #fff;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+   div::-webkit-scrollbar{
+    display: none;
+   }
+
+.row_posterl{
+    max-height: 250px;
+    margin: 0px;
+    object-fit: contain;
+    padding: 3px;
+}
+.row_poster{
+    max-height: 150px;
+    transform: 450ms;
+    margin: 0%;
+    padding: 3px;
+    padding-top: 0px;
+    box-sizing: border-box;
+
+}
+.row_posterl:hover{
+    transition: transform scale(scale (1:09));
+}
+h2{
+    margin-bottom: 1px;
+}
+
+.banner-content {
+    max-width: 600px;
+    margin-left: 30px;
+    padding-top: 130px;
+    height: 200px;
+}
+.banner{
+    
+
+    height: 550px;
+    object-fit: contain;
+    background: url(../imgs/moneyheist.jpg) 0% 0% / cover;
+}
+.banner_title{
+    font-size: large;
+    font-weight: 800;
+    padding-bottom: 10px;
+}
+.banner_description{
+    padding-top: 3rem;
+    line-height: 1.2rem;
+    font-size: 16px;
+    width: 40rem;
+    margin: 0%;
+    margin-left: 5px;
+}
+.button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-right: 1rem;
+    border-radius: 10px;
+    margin-top: 25px;
+    transition-duration: 0.4s;
+    }
+    .button:hover {
+        background-color: gray; /* White background */
+        color: black; /* Black text */
+      }   
+
+
+
+
